@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器示例</title>
+</head>
+<body>
+    <input type="text" id="result" readonly>
+
+    <input type="button" value="开始" onclick="startTime()">
+    <input type="button" value="结束" onclick="stopTime()">
+
+    <script>
+        var res = 0;
+        var t;
+        function startTime () {
+            document.getElementById('result').value = res;
+            res++;
+            t = setTimeout("startTime()", 1000);
+        }
+        function stopTime () {
+            res = 0;
+            clearTimeout(t);
+        }
+    </script>
+</body>
+</html>
